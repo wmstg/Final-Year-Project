@@ -1,0 +1,57 @@
+﻿<Window x:Class="ProjectMedi.ManageSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMedi"
+        mc:Ignorable="d"
+        Title="Manage Settings" Height="580" Width="800">
+    <Grid Margin="10,0,10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="100" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Name="welcomeTxt" Content="Welcome Administrator"/>
+        <Label Grid.Row="0" Grid.Column="0" Name="LabelCurrentDateTime" FontSize="12" Content="Current Time" HorizontalAlignment="Center" Foreground="#FF858585" />
+        <Button x:Name="LogoutButton" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="LogoutButton_Click">
+            <Image Source="Icons/Log_Out.png" />
+        </Button>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="HomeBtn" Grid.Row="1" Height="48" Width="24" Background="SteelBlue" Click="HomeBtn_Click" >
+                <Image Source="Icons/Home_16x.png"/>
+            </Button>
+            <Label Content="Manage Settings" FontSize="16" Foreground="#FF18688D" Padding="5,40,0,0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <!--<ColumnDefinition Width="200" />-->
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">Practice Name:</Label>
+                <TextBox x:Name="TextBoxPracticeName" Grid.Column="1" Width="300" HorizontalAlignment="Left" Margin="0,2,0,2" />
+                <Label Grid.Row="1" Grid.Column="0">Appointment Duration:</Label>
+                <TextBox x:Name="TextBoxAppointmentDuration" Grid.Column="1" Grid.Row="1" Width="100" HorizontalAlignment="Left" Margin="0,2,0,2" />
+                <Label Grid.Row="2" Grid.Column="0">Inactive Time out:</Label>
+                <TextBox x:Name="TextBoxInactiveTimeout" Grid.Column="1" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="0,2,0,2" />
+                <Button Grid.Column="1" Padding="20,10" Margin="0,10,0,0" HorizontalAlignment="Left" Grid.Row="3" x:Name="SubmitFormBtn" Content="Save" Width="100" Background="#FF32b2f1" BorderBrush="#FF32b2f1" Foreground="White" Click="SubmitFormBtn_Click" />
+            </Grid>
+
+            
+        </Grid>
+
+    </Grid>
+</Window>

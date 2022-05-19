@@ -1,0 +1,63 @@
+﻿<Window x:Class="ProjectMedi.AdministratorMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMedi"
+        mc:Ignorable="d"
+        Title="Administrator Home" Height="450" Width="800">
+    <Grid Margin="10,0,10,0">
+        <Grid x:Name="Head" Height="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Name="welcomeTxt" FontSize="14" Content="Welcome Administrator"/>
+            <Label Grid.Row="0" Grid.Column="0" Name="LabelCurrentDateTime" FontSize="12" Content="Current Time" HorizontalAlignment="Center" Foreground="#FF858585" />
+            <Button x:Name="LogoutButton" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="LogoutButton_Click">
+                <Image Source="Icons/Log_Out.png" />
+            </Button>
+            <Grid Grid.Row="1" Grid.Column="0" Margin="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Width="120" Height="120" CornerRadius="2" BorderBrush="#FF9cd6ff" BorderThickness="1">
+                    <Button x:Name="ManageStaff" Background="#FF9cd6ff" Content="Manage Staff" BorderThickness="0" Foreground="White" Click="ManageStaff_Click" />
+                </Border>
+
+                <Border Grid.Column="1" Width="120" Height="120" CornerRadius="2" BorderBrush="#FFf1615c" BorderThickness="1">
+                    <Button x:Name="ManageAppointments" Background="#FFf1615c" Content="Manage Appointments"  BorderThickness="0" Foreground="White" Click="ManageAppointments_Click" />
+                </Border>
+
+                <Border Grid.Column="2" Width="120" Height="120" CornerRadius="2" BorderBrush="#FFf1a97c" BorderThickness="1">
+                    <Button x:Name="SearchPatients" Background="#FFf1a97c" Content="Search Patients" BorderThickness="0" Foreground="White" Click="SearchPatients_Click" />
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="0" Width="120" Height="120" CornerRadius="2" BorderBrush="#FFa5f564" BorderThickness="1">
+                    <Button x:Name="RegisterPatients" Background="#FFa5f564" Content="Register Patients" BorderThickness="0" Foreground="White" Click="RegisterPatients_Click" />
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="1" Width="120" Height="120" CornerRadius="2" BorderBrush="#FFf5e58c" BorderThickness="1">
+                    <Button x:Name="Settings" Background="#FFf5e58c" Content="Settings" BorderThickness="0" Foreground="White" Click="ManageSettings_Click" />
+                </Border>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

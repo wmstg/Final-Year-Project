@@ -1,0 +1,57 @@
+﻿<Window x:Class="ProjectMedi.PatientMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMedi"
+        mc:Ignorable="d"
+        Title="Patient Home" Height="450" Width="800">
+    <Grid Margin="10,0,10,0">
+        <Grid x:Name="Head" Height="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Name="welcomeTxt" Content="Welcome Patient"/>
+            <Button x:Name="LogoutButton" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="LogoutButton_Click">
+                <Image Source="Icons/Log_Out.png" />
+            </Button>
+            <Grid Grid.Row="1" Grid.Column="0" Margin="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="TextBlockNextAppointment" Grid.Row="0" HorizontalAlignment="Center" Text="Your next appointment is: " Grid.ColumnSpan="3" Width="Auto" Background="#FFDEEEFF" />
+
+                <Border Grid.Column="0" Grid.Row="1" Width="120" Height="120" CornerRadius="2" BorderBrush="#FF9cd6ff" BorderThickness="1">
+                    <Button x:Name="BookAppointment" Background="#FF9cd6ff" Content="Book Appointment" BorderThickness="0" Foreground="White" Click="BookAppointment_Click" />
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="1" Width="120" Height="120" CornerRadius="2" BorderBrush="#FFf1615c" BorderThickness="1">
+                    <Button x:Name="ViewMedical" Background="#FFf1615c" Content="View Medical History" BorderThickness="0" Foreground="White" Click="ViewMedical_Click" />
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="1" Width="120" Height="120" CornerRadius="2" BorderBrush="#FFf1a97c" BorderThickness="1">
+                    <Button x:Name="ViewPrescriptions" Background="#FFf1a97c" Content="View Prescriptions" BorderThickness="0" Foreground="White" Click="ViewPrescriptions_Click" />
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="ProjectMedi.DoctorsMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMedi"
+        mc:Ignorable="d"
+        Title="Doctors Home" Height="450" Width="800">
+    <Grid Margin="10,0,10,0">
+        <Grid x:Name="Head" Height="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Name="welcomeTxt" Content="Welcome Doctor"/>
+            <Button x:Name="LogoutButton" Grid.Row="0" Grid.Column="0" Content="Logout" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="LogoutButton_Click"/>
+            <Grid Grid.Row="1" Grid.Column="0" Margin="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="ButtonStartConsultation" Content=" Start Consultation " Grid.Row="0" Grid.Column="0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,3,0,10" Click="ButtonStartConsultation_Click" />
+
+                <DataGrid Grid.Row="0" x:Name="DataGridUpcomingAppointments" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding}" Height="Auto" Margin="0,30,0,10">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Patient Name" Binding = "{Binding PatientName}" />
+                        <DataGridTextColumn Header="Appointment Date" Binding = "{Binding AppointmentDate}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

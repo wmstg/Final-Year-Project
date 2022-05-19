@@ -1,0 +1,64 @@
+﻿<Window x:Class="ProjectMedi.BookAppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMedi"
+        mc:Ignorable="d"
+        Title="Book Appointment" Height="450" Width="800">
+    <Grid Margin="10,0,10,0">
+        <Grid x:Name="Head" Height="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="100" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- First (0) Row -->
+            <Label Grid.Row="0" Grid.Column="0" Name="welcomeTxt" Content="Welcome Patient"/>
+            <Button x:Name="LogoutButton" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="LogoutButton_Click">
+                <Image Source="Icons/Log_Out.png" />
+            </Button>
+            <!-- Second (1) Row -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Button x:Name="HomeBtn" Grid.Row="1" Height="48" Width="24" Background="SteelBlue" Click="HomeBtn_Click">
+                    <Image Source="Icons/Home_16x.png"/>
+                </Button>
+                <Label Content="» Book an Appointment" FontSize="16" Foreground="#FF18688D" Padding="5,40,0,0"/>
+            </StackPanel>
+            <!-- Final (2) Row -->
+            <Grid Grid.Row="2" Margin="0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Calendar Grid.Column="0" x:Name="ScheduleCalender" />
+                <StackPanel Grid.Column="1" Orientation="Vertical" Height="Auto">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Content="Doctor" />
+                        <ComboBox x:Name="DoctorComboBox" Height="Auto" Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                        <Label Content="Time" />
+                        <ComboBox x:Name="TimeComboBox" Height="Auto" Width="200" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                        <Label Name="LabelAppointmentNotice" Content="Please be aware, appointments are scheduled for 15 minutes."/>
+                        <Button x:Name="ButtonBookAppointment" Content="Book"  Padding="20,10" HorizontalAlignment="Right" Background="#FF32b2f1" BorderBrush="#FF32b2f1" Foreground="White" Click="ButtonBookAppointment_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
